@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PizKTruck Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="topbar">
+  <h1>PizKTruck Admin</h1>
+  <button class="btn-secondary btn-small" onclick="cerrarSesion()">Cerrar sesión</button>
+</div>
+
+<div class="layout">
+  <div class="sidebar">
+    <h2>Restaurantes</h2>
+    <div id="listaRestaurantes"></div>
+    <div class="inline-form" style="margin-top:14px; flex-direction:column;">
+      <input type="text" id="nuevoNombre" placeholder="Nombre del truck">
+      <input type="text" id="nuevoSlug" placeholder="slug-sin-espacios">
+      <input type="text" id="nuevoWhatsapp" placeholder="Whatsapp: 13051234567">
+      <button class="btn-primary" onclick="crearRestaurante()">+ Nuevo restaurante</button>
+    </div>
+  </div>
+
+  <div class="content" id="contenidoRestaurante">
+    <div class="empty-note">Selecciona un restaurante de la izquierda, o crea uno nuevo.</div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script src="../js/supabase-config.js"></script>
+<script src="js/admin.js"></script>
+<script>iniciarPanel();</script>
+</body>
+</html>

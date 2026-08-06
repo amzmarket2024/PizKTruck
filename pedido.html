@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>body{padding-bottom:90px;}</style>
+</head>
+<body>
+
+<header class="truck-header">
+  <div class="logo-row">
+    <div class="logo" id="restLogo">🚚</div>
+    <div>
+      <h1 class="display" id="restNombre">Cargando...</h1>
+      <div class="sub" id="restSub"></div>
+    </div>
+  </div>
+</header>
+
+<nav class="cat-nav" id="catNav"></nav>
+<main id="catalogo"></main>
+
+<div id="cartBar">
+  <div class="cart-summary">
+    <span id="cartCount">0 items</span>
+    <span class="cart-total" id="cartTotal">$0.00</span>
+  </div>
+  <input type="text" id="nameInput" placeholder="Tu nombre, para que te reconozcan" oninput="validarEnvio()">
+  <button id="sendBtn" onclick="enviarWhatsapp()" disabled>Pedir por WhatsApp</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/catalogo.js"></script>
+<script>initCatalogo(true);</script>
+</body>
+</html>
